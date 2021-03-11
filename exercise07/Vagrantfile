@@ -1,0 +1,33 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# provision script
+#-----------------------------------------------------------------------
+$bootstrap = <<BOOTSTRAP
+export DEBIAN_FRONTEND=noninteractive
+apt-get update && apt-get upgrade
+
+# label as reference environment
+echo "export ECE3574_REFERENCE_ENV=Y" >> /etc/environment
+
+# install base development tools
+apt-get -y install build-essential
+apt-get -y install cmake valgrind lcov graphviz doxygen
+apt-get -y install python3-pip
+pip3 install gcovr
+pip3 install pexpect
+
+BOOTSTRAP
+#-----------------------------------------------------------------------
+
+
+# Configuration
+Vagrant.configure("2") do |config|
+  config.vm.box = "bento/ubuntu-18.04"
+
+  # (default timeout is 300 s)
+  config.vm.boot_timeout = 600
+
+  # set up the VM
+  config.vm.provision "shell", inline: $bootstrap
+end

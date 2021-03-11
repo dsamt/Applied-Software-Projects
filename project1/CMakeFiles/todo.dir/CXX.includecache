@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/vagrant/todo.cpp
+iostream
+-
+fstream
+-
+cstring
+-
+string
+-
+vector
+-
+sstream
+-
+cstdlib
+-
+cctype
+-
+queue
+-
+utility
+-
+map
+-
+sstream
+-
+algorithm
+-
+iterator
+-
+

@@ -1,0 +1,3 @@
+/vagrant/CMakeFiles/rebuild_cache.dir
+/vagrant/CMakeFiles/todo.dir
+/vagrant/CMakeFiles/edit_cache.dir
